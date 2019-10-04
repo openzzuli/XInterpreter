@@ -15,8 +15,8 @@ const (
 	EOF     = "EOF"
 
 	//Identifiers + Literals.
-	IDEN = "IDEN"
-	INT  = "INT"
+	IDENT = "IDENT"
+	INT   = "INT"
 
 	//Operators.
 	COMMA     = ","
