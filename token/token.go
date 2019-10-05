@@ -22,22 +22,39 @@ const (
 	COMMA     = ","
 	SEMICOLON = ";"
 	ASSIGN    = "ASSIGN"
+	PLUS      = "+"
+	MINUS     = "-"
+	BANG      = "!"
+	ASTERISK  = "*"
+	SLASH     = "/"
+
+	LESSTHAN = "<"
+	GREATHAN = ">"
 
 	LPAREN = "("
 	RPAREN = ")"
 	LBRACE = "{"
 	RBRACE = "}"
-	PLUS   = "PLUS"
 
 	//Keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
 )
 
 // KEYWORDS is a map to REMEMBER all the Keywords in this context.
 var KEYWORDS = map[string]TokenType{
-	"fn":  FUNCTION,
-	"let": LET,
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
 //LookupIdent is a FUNCTION to ensure that there is such a Keywords in this context.
