@@ -28,8 +28,12 @@ const (
 	ASTERISK  = "*"
 	SLASH     = "/"
 
-	LESSTHAN = "<"
-	GREATHAN = ">"
+	EQ          = "=="
+	NOT_EQ      = "!="
+	LESSTHAN    = "<"
+	GREATHAN    = ">"
+	LESSTHAN_EQ = "<="
+	GREATHAN_EQ = ">="
 
 	LPAREN = "("
 	RPAREN = ")"

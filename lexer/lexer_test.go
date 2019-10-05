@@ -30,6 +30,9 @@ if (5 < 10) {
 } else {
 	return false;
 }
+
+10 <= 10;
+10 >= 9;
 `
 
 	tests := []expectedToken{
@@ -98,6 +101,14 @@ if (5 < 10) {
 		{token.FALSE, "false"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
+		{token.INT, "10"},
+		{token.LESSTHAN_EQ, "<="},
+		{token.INT, "10"},
+		{token.SEMICOLON, ";"},
+		{token.INT, "10"},
+		{token.GREATHAN_EQ, ">="},
+		{token.INT, "9"},
+		{token.SEMICOLON, ";"},
 		{token.EOF, ""},
 	}
 
