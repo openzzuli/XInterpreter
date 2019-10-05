@@ -33,3 +33,17 @@ const (
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
 )
+
+// KEYWORDS is a map to REMEMBER all the Keywords in this context.
+var KEYWORDS = map[string]TokenType{
+	"fn":  FUNCTION,
+	"let": LET,
+}
+
+//LookupIdent is a FUNCTION to ensure that there is such a Keywords in this context.
+func LookupIdent(ident string) TokenType {
+	if tok, ok := KEYWORDS[ident]; ok {
+		return tok
+	}
+	return IDENT
+}

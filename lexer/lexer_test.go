@@ -3,6 +3,8 @@ package lexer
 import (
 	"testing"
 
+	"fmt"
+
 	"../token"
 )
 
@@ -13,13 +15,13 @@ type expectedToken struct {
 
 func TestNextToken(t *testing.T) {
 	input := `let five = 5;
-	let ten = 10;
+let ten = 10;
 	
-	let add = fn(x, y) {
-		x + y;
-	};
+let add = fn(x, y) {
+	x + y;
+};
 	
-	let result = add(five, ten);
+let result = add(five, ten);
 	`
 
 	tests := []expectedToken{
@@ -66,6 +68,8 @@ func TestNextToken(t *testing.T) {
 
 	for i, tt := range tests {
 		tok := l.NextToken()
+
+		fmt.Printf("Type:%q Literal:%q\n", tok.Type, tok.Literal)
 
 		if tok.Type != tt.expectedType {
 			t.Fatalf("tests[%d] - tokentype wrong. expected = %q, got = %q", i, tt.expectedType, tok.Type)
