@@ -28,6 +28,7 @@ func (l *Lexer) readChar() {
 	l.readPosition++
 }
 
+//peakChar is like to read a char at current positon but without positon++.
 func (l *Lexer) peakChar() byte {
 	if l.readPosition >= len(l.input) {
 		return 0
@@ -40,6 +41,7 @@ func (l *Lexer) peakChar() byte {
 func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 
+	//eat no meanings whitespace we get.
 	l.skipWhitespace()
 
 	switch l.ch {
