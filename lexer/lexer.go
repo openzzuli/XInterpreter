@@ -122,7 +122,7 @@ func newToken(tokenType token.TokenType, ch byte) token.Token {
 //readIdentifier is to read a Identifier from current positon.
 func (l *Lexer) readIdentifier() string {
 	positon := l.positon
-	for isLetter(l.ch) {
+	for isLetter(l.ch) || isDigit(l.ch) {
 		l.readChar()
 	}
 	return l.input[positon:l.positon]
